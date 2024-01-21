@@ -2,48 +2,54 @@ let basis = [4,3,2,1,0,1,2,3,4];
 
 
 
+
 function create (basis) {
 
-
+    
+    let pattern = ``; 
+    var E = "&nbsp;";
 
 for (let i=0; i <basis.length;i++) {
 
+
+
     if (basis[i] === 4) {
 
-        console.log("     *") ;
+      pattern +=  `${E}`+ `${E}`+  `${E}`+   `${E}`+ `${E}`+ `${E}`+ `${E}`+  "*<br>";
 
     }
 
     else if (basis[i] === 3) {
-        console.log("    ***"); 
-
+        pattern += `${E}`+`${E}` + `${E}`+ `${E}`+ `${E}`+   "***<br>"; 
     }
 
     else if (basis[i] === 2) {
 
-        console.log("  ******");
-        
-
+        pattern += `${E}`+`${E}` + `${E}`+ "******<br>";
     }
+
     else if (basis[i] === 1) {
 
-        console.log(" ********"); 
-        
-
+        pattern += `${E}`+ "********<br>"; 
     }
 
     else if (basis[i] === 0) {
-        console.log("**********"); 
+        pattern += "**********<br>"; 
 
-    }
+    } 
+    
+}; 
+
+return pattern; 
 
 }
 
 
-
-}
 
 create (basis); 
 
 
+console.log (create(basis)); 
 
+
+document.getElementById("diamond").innerHTML = (create(basis));
